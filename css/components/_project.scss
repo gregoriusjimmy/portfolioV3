@@ -1,0 +1,42 @@
+.project-showcase {
+  margin-top: 5vw;
+  text-align: center;
+
+  h3 {
+    color: #b7b4b9;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 1.2em;
+  }
+  p {
+    margin: 5 auto;
+    text-align: center;
+    max-width: 70%;
+    @include phone {
+      max-width: 100%;
+    }
+  }
+  .name {
+    font-size: 3em;
+    font-weight: normal;
+  }
+  a {
+    display: block;
+    font-size: 1.2em;
+    margin: 70px 0;
+    font-weight: bold;
+    transition: 0.2 ease;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  .image-container {
+    margin: 0 auto;
+    max-width: 80%;
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.1);
+    // margin-bottom: 20px;
+    @include tablet {
+      max-width: 100%;
+    }
+  }
+}

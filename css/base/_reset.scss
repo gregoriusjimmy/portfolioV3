@@ -1,0 +1,55 @@
+html {
+  scroll-behavior: smooth;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+body {
+  font-size: 16px;
+  overflow-x: hidden;
+  @include phone {
+    font-size: 14px;
+  }
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+p {
+  line-height: 31px;
+}
+
+h1 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 2em;
+  letter-spacing: 0.2em;
+  @include tablet {
+    font-size: 1.5em;
+  }
+}
+h2,
+h3 {
+  font-weight: 400;
+}
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+section:not(:first-of-type) {
+  margin: 50px 0;
+  @include tablet {
+  }
+  @include phone {
+  }
+}

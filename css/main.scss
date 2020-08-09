@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+//   abstract
+@import './abstracts/mixins';
+@import './abstracts/variables';
+
+// reset
+@import './base/reset';
+
+// layouts
+// @import './layouts/header';
+
+// components
+@import './components/nav';
+@import './components/hero';
+@import './components/button';
+@import './components/project-section';
+@import './components/project';
+@import './components/whatido.scss';
+@import './components/wanttowork.scss';
+
+// @import './components/sidedrawer';
+// @import './components/about';
+// @import './components/showcase';
+
+.container {
+  width: 80%;
+  padding: 20px;
+  margin: 0 auto;
+  @include tablet {
+    width: 85%;
+  }
+  @include phone {
+    width: 90%;
+  }
+}
+.container-clip {
+  width: 84%;
+  padding: 20px;
+  margin: 0 auto;
+  margin-bottom: 80px;
+  @include tablet {
+    width: 89%;
+    margin-bottom: 50px;
+  }
+  @include phone {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}
+
+.bg-cream {
+  background-color: $creamBg;
+  margin: 0 2em;
+  @include tablet {
+    margin: 0 1.5em;
+  }
+  @include phone {
+    margin: 0 0;
+  }
+}
+
+.p-relative {
+  position: relative;
+}
+.underline {
+  width: 250px;
+  padding-bottom: 10px;
+  border-radius: 4px;
+  border-bottom: 1px solid rgb(233, 233, 233);
+}
+.section-title {
+  margin-bottom: 20px;
+}
