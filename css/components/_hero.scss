@@ -87,7 +87,7 @@
         margin-right: 1em;
         display: inline-block;
         img {
-          transition: 0.3s;
+          transition: 0.3s ease;
           &:hover {
             filter: invert(21%) sepia(0%) saturate(1304%) hue-rotate(182deg)
               brightness(99%) contrast(93%);
@@ -131,7 +131,7 @@
       display: inline;
     }
     img {
-      transition: 0.3s;
+      transition: 0.3s ease;
       display: inline-block;
       margin-left: 8px;
     }

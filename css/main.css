@@ -213,7 +213,7 @@ nav .nav-links .nav-item:hover {
   display: inline-block;
 }
 .hero .hero-content .contact-list li img {
-  transition: 0.3s;
+  transition: 0.3s ease;
   width: 64px;
 }
 .hero .hero-content .contact-list li img:hover {
@@ -261,7 +261,7 @@ nav .nav-links .nav-item:hover {
   display: inline;
 }
 .see-my-works a img {
-  transition: 0.3s;
+  transition: 0.3s ease;
   display: inline-block;
   margin-left: 8px;
 }
@@ -276,12 +276,11 @@ button {
 }
 
 .primary-btn {
-  margin-right: 1rem;
   padding: 9px;
   color: white;
   background-color: #eb5c3b;
   text-align: center;
-  transition: 0.2s;
+  transition: 0.2s ease;
 }
 .primary-btn:hover {
   opacity: 0.7;
@@ -291,12 +290,59 @@ button {
   color: #eb5c3b;
   background-color: white;
   border: 1px solid #eb5c3b;
-  transition: 0.2s;
+  transition: 0.2s ease;
 }
 .ghost-btn:hover {
   opacity: 0.7;
 }
 
+.projects .project-design-section .project-design-title {
+  margin-bottom: 2em;
+}
+.projects .project-design-section .projects-design {
+  display: flex;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 480px) {
+  .projects .project-design-section .projects-design {
+    flex-direction: column;
+  }
+}
+.projects .project-design-section .projects-design .project-design {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media only screen and (max-width: 480px) {
+  .projects .project-design-section .projects-design .project-design {
+    width: 100%;
+    margin-bottom: 2.5em;
+  }
+}
+.projects .project-design-section .projects-design .project-design img {
+  width: 80%;
+}
+@media only screen and (max-width: 768px) {
+  .projects .project-design-section .projects-design .project-design img {
+    width: 90%;
+  }
+}
+.projects .project-design-section .projects-design .project-design div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+@media only screen and (max-width: 768px) {
+  .projects .project-design-section .projects-design .project-design div {
+    width: 90%;
+  }
+}
+.projects .project-design-section .projects-design .project-design div h3 {
+  margin: 20px 9px;
+  display: inline-block;
+}
 .projects .project {
   width: 100%;
   display: flex;
@@ -322,6 +368,9 @@ button {
 .projects .project .project-content {
   width: 50%;
 }
+.projects .project .project-content .primary-btn {
+  margin-right: 1em;
+}
 @media only screen and (max-width: 768px) {
   .projects .project .project-content {
     width: 100%;
@@ -336,9 +385,93 @@ button {
   .projects .project .project-image {
     width: 100%;
     margin-left: 0;
-    margin-bottom: 30px;
+    margin-bottom: 55px;
   }
 }
+@media only screen and (max-width: 480px) {
+  .projects .project .project-image {
+    margin-bottom: 40px;
+  }
+}
+.projects .project .project-image a:hover img {
+  transform: translate(-9px, -9px);
+}
+.projects .project .project-image a:hover .overlay {
+  background: rgba(0, 0, 0, 0.3);
+  transform: translate(-9px, -9px);
+}
+.projects .project .project-image a:hover .overlay span {
+  opacity: 1;
+}
+.projects .project .project-image a img {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transition: 0.3s ease;
+}
+@media only screen and (max-width: 768px) {
+  .projects .project .project-image a img {
+    width: 90%;
+    display: block;
+    margin-left: 2%;
+  }
+}
+.projects .project .project-image a .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0);
+  transition: 0.3s ease;
+}
+.projects .project .project-image a .overlay span {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  position: absolute;
+  color: white;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s ease;
+  opacity: 0;
+}
+.projects .project .project-image a .back-layer-pink {
+  position: absolute;
+  top: 13%;
+  left: 5%;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  z-index: -1;
+  background-color: #de8585;
+}
+@media only screen and (max-width: 768px) {
+  .projects .project .project-image a .back-layer-pink {
+    width: 92%;
+    height: 100%;
+  }
+}
+.projects .project .project-image a .back-layer-green {
+  position: absolute;
+  top: 13%;
+  left: 5%;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  z-index: -1;
+  background-color: #85dec7;
+}
+@media only screen and (max-width: 768px) {
+  .projects .project .project-image a .back-layer-green {
+    width: 92%;
+    height: 100%;
+  }
+}
+
 .project-showcase {
   margin-top: 5vw;
   text-align: center;
