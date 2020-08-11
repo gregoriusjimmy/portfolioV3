@@ -3,6 +3,8 @@
   margin-bottom: 50px;
   @include tablet {
     margin-bottom: 20px;
+  }
+  @include phone {
     min-height: unset;
   }
 }
@@ -49,8 +51,7 @@
       text-align: center;
       margin: 20px auto 0;
     }
-    h1 {
-    }
+
     .intro {
       font-family: 'Roboto', sans-serif;
       font-weight: 500;
