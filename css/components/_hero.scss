@@ -3,6 +3,7 @@
   margin-bottom: 50px;
   @include tablet {
     margin-bottom: 20px;
+    min-height: unset;
   }
 }
 .hero {
