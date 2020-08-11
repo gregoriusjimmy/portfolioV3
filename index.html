@@ -2,6 +2,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="assets/jimmy-fav.png"
+      type="image/png"
+      sizes="32x32"
+    />
+    <meta
+      name="keywords"
+      content="Jimmy, portfolio, web design, web developer"
+    />
+    <meta
+      name="description"
+      content="I design and build beautiful websites for businesses around the globe. If you need a modern and powerful website, send me an email."
+    />
+    <meta name="og:title" property="og:title" content="Jimmy - Portfolio" />
+    <meta
+      property="og:description"
+      content="I design and build beautiful websites for businesses around the globe. If you need a modern and powerful website, send me an email."
+    />
+    <meta property="og:image" content="https://i.ibb.co/pK0YCNk/jimmy.jpg" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/main.css" />
     <title>Jimmy - Portfolio</title>
   </head>
@@ -9,49 +30,75 @@
     <nav>
       <div class="container-nav">
         <div class="nav-brand">
-          <a href="#">Jimmy.</a>
+          <a href="/index.html">Jimmy.</a>
         </div>
         <ul class="nav-links">
           <li class="nav-item">
-            <a href="">get in touch</a>
+            <a href="#contactme">get in touch</a>
           </li>
           <li class="nav-item">
-            <a href="">projects</a>
+            <a href="#projects">projects</a>
           </li>
         </ul>
       </div>
     </nav>
-
     <section class="hero-section">
       <div class="container">
         <div class="hero">
-          <div class="profil-pic">
+          <div class="profil-pic" data-aos="fade-right">
             <img src="assets/profil-pic.png" alt="profil-picture" />
           </div>
           <div class="hero-content">
-            <h1 class="intro">Hi I'm Jimmy!</h1>
-            <h1 class="title">
+            <h1
+              class="intro"
+              data-aos="fade-up"
+              data-aos-anchor=".profil-pic"
+              data-aos-delay="300"
+            >
+              Hi I'm Jimmy!
+            </h1>
+            <h1
+              class="title"
+              data-aos="fade-up"
+              data-aos-anchor=".intro"
+              data-aos-delay="600"
+            >
               <span class="developer-title">WEB DEVELOPER</span><br />/<span
                 class="designer-title"
                 >DESIGNER</span
               >
             </h1>
-            <ul class="contact-list">
+            <ul
+              class="contact-list"
+              data-aos="fade-up"
+              data-aos-anchor=".title"
+              data-aos-delay="900"
+            >
               <li>
-                <a href="">
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/in/gregoriusjimmy/"
+                >
                   <img src="assets/linkedin.svg" alt="linkedin" />
                 </a>
               </li>
               <li>
-                <a href="">
+                <a target="_blank" href="https://github.com/gregoriusjimmy">
                   <img src="assets/github.svg" alt="github" />
                 </a>
               </li>
             </ul>
           </div>
         </div>
-        <div class="see-my-works">
-          <a href=""
+        <div
+          class="see-my-works"
+          data-aos="fade-right"
+          data-aos-anchor=".contact-list"
+          data-aos-delay="1200"
+          data-aos-duration="2000"
+          data-aos-easing="ease"
+        >
+          <a href="#projects"
             >See my works <img src="assets/arrow-right.svg" alt="arrow"
           /></a>
         </div>
@@ -61,9 +108,16 @@
       <div class="bg-cream">
         <div class="container-clip">
           <div class="what-i-do">
-            <h1 class="section-title">WHAT I DO</h1>
+            <h1 class="section-title" id="what-i-do" data-aos="fade-up">
+              WHAT I DO
+            </h1>
             <div class="what-i-do-content">
-              <div class="front-end">
+              <div
+                class="front-end"
+                data-aos="fade-up"
+                data-aos-anchor="#what-i-do"
+                data-aos-delay="300"
+              >
                 <h3>FRONT-END</h3>
                 <p class="title-desc">
                   As a front-end i build responsive static and dynamic website
@@ -86,7 +140,12 @@
                 </ul>
               </div>
 
-              <div class="back-end">
+              <div
+                class="back-end"
+                data-aos="fade-up"
+                data-aos-anchor=".front-end"
+                data-aos-delay="600"
+              >
                 <h3>BACK-END</h3>
                 <p class="title-desc">
                   As a back-end I implement RESTful API to website and connect
@@ -107,7 +166,7 @@
         </div>
       </div>
     </section>
-    <section>
+    <section id="projects">
       <div class="container">
         <div class="projects">
           <h1 class="section-title underline" style="margin-bottom: 50px;">
@@ -118,20 +177,22 @@
               <h2 class="project-name">Smart Brain</h2>
               <p>
                 Face recognition app using machine learning API that Clarifai
-                provided, the server receive the user's url photo and ask
+                provided, the server receives the user's URL photo and ask
                 Clarifai machine learning model to detect the face within the
-                photo. User must register first to be able to use this app and
-                then user data will be stored in the database. this project made
-                using React, Node for the back-end and Postgresql for the
-                database
+                picture. Users must register first to be able to use this app,
+                and then user data will be stored in the database. This project
+                made using React, Node for the back-end, and Postgresql for the
+                database.
               </p>
               <div class="project-buttons">
                 <a
                   target="_blank"
-                  href="https://github.com/gregoriusjimmy/jm-cloth"
+                  href="https://github.com/gregoriusjimmy/SmartBrain-Project"
                   ><button class="primary-btn">Source Code</button>
                 </a>
-                <a target="_blank" href="https://jm-cloth.herokuapp.com/"
+                <a
+                  target="_blank"
+                  href="https://smart-brain-faceclick.herokuapp.com/"
                   ><button class="ghost-btn">See Live!</button>
                 </a>
               </div>
@@ -179,19 +240,19 @@
             <div class="project-content">
               <h2 class="project-name">Cihuy Bookstroe</h2>
               <p>
-                Similiar to Jm-Clot app but instead of using a framework, I only
+                Similar to Jm-Cloth app but instead of using a framework, I only
                 use plain Javascript. I used mustache as a templating engine and
-                dom to do all the work.The website integrated with admin page on
-                another URL, used API to communicate to admin server and
-                databases
+                dom to do all the work. The website integrated with admin page
+                on another URL, used API to communicate to admin server and
+                databases.
               </p>
               <div class="project-buttons">
                 <a
                   target="_blank"
-                  href="https://github.com/gregoriusjimmy/jm-cloth"
+                  href="https://github.com/gregoriusjimmy/TokoBukuCihuy-Client"
                   ><button class="primary-btn">Source Code</button>
                 </a>
-                <a target="_blank" href="https://jm-cloth.herokuapp.com/"
+                <a target="_blank" href="https://cihuy-bookstore.herokuapp.com/"
                   ><button class="ghost-btn">See Live!</button>
                 </a>
               </div>
@@ -211,17 +272,17 @@
             <div class="project-content">
               <h2 class="project-name">PetShop Management System</h2>
               <p>
-                Management system app that help user manage their own pet shop.
-                Made with React, this web application contains basic CRUD to
-                control goods, costumer, suppliers. Featured cashier, buying
-                from suppliers, and an automated accountant calculation. at the
-                end of the month, the manager could see the income report of the
+                Management system app that help user manage their pet shop. Made
+                with React, this web application contains basic CRUD to control
+                goods, costumer, suppliers. Featured cashier, buying from
+                suppliers, and an automated accountant calculation. At the end
+                of the month, the manager could see the income report of the
                 store.
               </p>
               <div class="project-buttons">
                 <a
                   target="_blank"
-                  href="https://github.com/gregoriusjimmy/jm-cloth"
+                  href="https://github.com/gregoriusjimmy/PetShop-ManagementSystem"
                   ><button class="primary-btn">Source Code</button>
                 </a>
               </div>
@@ -238,29 +299,35 @@
             <h2 class="project-design-title">Landing Page Design</h2>
             <div class="projects-design">
               <div class="project-design">
-                <img
-                  src="/assets/projects/team-app-thumbnail.jpg"
-                  alt="team-app-thumbnail"
-                />
+                <a href="/project/team-website.html">
+                  <img
+                    src="/assets/projects/team-app-thumbnail.jpg"
+                    alt="team-app-thumbnail"
+                  />
+                  <div class="project-design-overlay">
+                    <span>See Design!</span>
+                  </div>
+                </a>
                 <div>
                   <h3>Team App</h3>
-                  <a
-                    target="_blank"
-                    href="https://github.com/gregoriusjimmy/jm-cloth"
+                  <a target="_blank" href="/project/team-website.html"
                     ><button class="ghost-btn">See Design</button>
                   </a>
                 </div>
               </div>
               <div class="project-design">
-                <img
-                  src="/assets/projects/chat-app-thumbnail.jpg"
-                  alt="chat-app-thumbnail"
-                />
+                <a href="/project/chat-app.html">
+                  <img
+                    src="/assets/projects/chat-app-thumbnail.jpg"
+                    alt="chat-app-thumbnail"
+                  />
+                  <div class="project-design-overlay">
+                    <span>See Design!</span>
+                  </div>
+                </a>
                 <div>
                   <h3>Chat App</h3>
-                  <a
-                    target="_blank"
-                    href="https://github.com/gregoriusjimmy/jm-cloth"
+                  <a target="_blank" href="/project/chat-app.html"
                     ><button class="ghost-btn">See Design</button>
                   </a>
                 </div>
@@ -270,5 +337,46 @@
         </div>
       </div>
     </section>
+    <section id="contactme" class="contactme-section">
+      <div class="bg-cream">
+        <div class="container-clip">
+          <div class="contactme">
+            <div>
+              <h1
+                class="section-title contactme-title"
+                style="margin-bottom: 30px;"
+                data-aos="fade-up"
+              >
+                CONTACT ME
+              </h1>
+            </div>
+            <div>
+              <p
+                class="contactme-text"
+                data-aos="fade-up"
+                data-aos-anchor=".contactme-title"
+                data-aos-delay="300"
+              >
+                Thanks for visiting my website, if you want to reach me you can
+                email me to <strong>gregoriusjimmy@gmail.com</strong>. I am also
+                available via
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/in/gregoriusjimmy/"
+                  >LinkedIn</a
+                >
+              </p>
+            </div>
+          </div>
+          <p class="copyright">© All rights reserved – Gregorius Jimmy</p>
+        </div>
+      </div>
+    </section>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+      });
+    </script>
   </body>
 </html>

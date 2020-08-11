@@ -18,10 +18,51 @@
           width: 100%;
           margin-bottom: 2.5em;
         }
-        img {
-          width: 80%;
-          @include tablet {
-            width: 90%;
+        a {
+          &:hover {
+            .project-design-overlay {
+              background: rgba(0, 0, 0, 0.3);
+              span {
+                opacity: 1;
+              }
+            }
+          }
+          text-align: center;
+          display: block;
+          position: relative;
+          img {
+            width: 80%;
+            @include tablet {
+              width: 90%;
+            }
+          }
+
+          .project-design-overlay {
+            margin: 0 auto;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 80%;
+            background: rgba(0, 0, 0, 0);
+            transition: 0.3s ease;
+
+            span {
+              font-size: 1.5em;
+              text-transform: uppercase;
+              letter-spacing: 0.2em;
+              position: absolute;
+              color: white;
+              text-align: center;
+              top: 50%;
+              left: 50%;
+              // display: none;
+              transform: translate(-50%, -50%);
+              transition: 0.3s ease;
+              opacity: 0;
+            }
           }
         }
         div {

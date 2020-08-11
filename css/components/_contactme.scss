@@ -1,0 +1,43 @@
+.contactme-section {
+  .container-clip {
+    margin-bottom: 0;
+
+    .contactme {
+      display: flex;
+      padding: 20 0;
+      @include tablet {
+        flex-direction: column;
+      }
+      div {
+        width: 50%;
+        @include tablet {
+          width: 100%;
+        }
+        .contactme-text {
+          margin: 0;
+
+          a {
+            font-weight: bold;
+            color: #155a6e;
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+    }
+    .copyright {
+      font-size: 0.9em;
+      padding: 100px 0 20px;
+      @include tablet {
+        padding-top: 50px;
+      }
+      @include phone {
+        padding-top: 0px;
+      }
+    }
+  }
+}
+section.contactme-section {
+  margin-bottom: 0;
+}

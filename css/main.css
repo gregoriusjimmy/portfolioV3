@@ -320,13 +320,49 @@ button {
     margin-bottom: 2.5em;
   }
 }
-.projects .project-design-section .projects-design .project-design img {
+.projects .project-design-section .projects-design .project-design a {
+  text-align: center;
+  display: block;
+  position: relative;
+}
+.projects .project-design-section .projects-design .project-design a:hover .project-design-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+.projects .project-design-section .projects-design .project-design a:hover .project-design-overlay span {
+  opacity: 1;
+}
+.projects .project-design-section .projects-design .project-design a img {
   width: 80%;
 }
 @media only screen and (max-width: 768px) {
-  .projects .project-design-section .projects-design .project-design img {
+  .projects .project-design-section .projects-design .project-design a img {
     width: 90%;
   }
+}
+.projects .project-design-section .projects-design .project-design a .project-design-overlay {
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 80%;
+  background: rgba(0, 0, 0, 0);
+  transition: 0.3s ease;
+}
+.projects .project-design-section .projects-design .project-design a .project-design-overlay span {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  position: absolute;
+  color: white;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s ease;
+  opacity: 0;
 }
 .projects .project-design-section .projects-design .project-design div {
   display: flex;
@@ -479,7 +515,7 @@ button {
 .project-showcase h3 {
   color: #b7b4b9;
   text-transform: uppercase;
-  font-weight: normal;
+  font-weight: 500;
   font-size: 1.2em;
 }
 .project-showcase p {
@@ -494,7 +530,9 @@ button {
 }
 .project-showcase .name {
   font-size: 3em;
-  font-weight: normal;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 5px;
 }
 .project-showcase a {
   display: block;
@@ -577,52 +615,53 @@ button {
   color: white;
 }
 
-.want-to-work-container {
+.contactme-section .container-clip {
+  margin-bottom: 0;
+}
+.contactme-section .container-clip .contactme {
   display: flex;
+  padding: 20 0;
 }
 @media only screen and (max-width: 768px) {
-  .want-to-work-container {
+  .contactme-section .container-clip .contactme {
     flex-direction: column;
   }
 }
-.want-to-work-container .section-title {
+.contactme-section .container-clip .contactme div {
   width: 50%;
 }
 @media only screen and (max-width: 768px) {
-  .want-to-work-container .section-title {
+  .contactme-section .container-clip .contactme div {
     width: 100%;
   }
 }
-.want-to-work-container .section-title h1 {
-  font-size: 3em;
-  font-family: "Kanit";
-  font-style: normal;
-  font-weight: normal;
+.contactme-section .container-clip .contactme div .contactme-text {
+  margin: 0;
 }
-.want-to-work-container .content {
-  width: 50%;
+.contactme-section .container-clip .contactme div .contactme-text a {
+  font-weight: bold;
+  color: #155a6e;
+}
+.contactme-section .container-clip .contactme div .contactme-text a:hover {
+  opacity: 0.8;
+}
+.contactme-section .container-clip .copyright {
+  font-size: 0.9em;
+  padding: 100px 0 20px;
 }
 @media only screen and (max-width: 768px) {
-  .want-to-work-container .content {
-    width: 100%;
+  .contactme-section .container-clip .copyright {
+    padding-top: 50px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .contactme-section .container-clip .copyright {
+    padding-top: 0px;
   }
 }
 
-.copyright {
-  margin-top: 200px;
-}
-.copyright h6 {
-  font-weight: normal;
-  font-size: 1em;
-}
-@media only screen and (max-width: 768px) {
-  .copyright {
-    margin-top: 100px;
-  }
-}
-
-.section.footer {
-  margin-bottom: 20px;
+section.contactme-section {
+  margin-bottom: 0;
 }
 
 .container {
