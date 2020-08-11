@@ -10,6 +10,9 @@ nav {
     display: inline;
     font-weight: 600;
     font-size: 20;
+    @include tablet {
+      font-size: 1em;
+    }
   }
   .nav-links {
     display: inline;

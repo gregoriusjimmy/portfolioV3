@@ -72,6 +72,11 @@ nav .nav-brand {
   font-weight: 600;
   font-size: 20;
 }
+@media only screen and (max-width: 768px) {
+  nav .nav-brand {
+    font-size: 1em;
+  }
+}
 nav .nav-links {
   display: inline;
 }
