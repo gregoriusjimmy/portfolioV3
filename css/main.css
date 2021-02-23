@@ -578,6 +578,16 @@ button {
     max-width: 100%;
   }
 }
+.project-showcase .image-container2 {
+  margin: 0 auto;
+  max-width: 100%;
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.1);
+}
+@media only screen and (max-width: 768px) {
+  .project-showcase .image-container2 {
+    max-width: 100%;
+  }
+}
 
 .what-i-do {
   padding: 20px 0;

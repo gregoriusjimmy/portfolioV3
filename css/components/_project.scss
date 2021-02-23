@@ -41,4 +41,13 @@
       max-width: 100%;
     }
   }
+  .image-container2 {
+    margin: 0 auto;
+    max-width: 100%;
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.1);
+    // margin-bottom: 20px;
+    @include tablet {
+      max-width: 100%;
+    }
+  }
 }
