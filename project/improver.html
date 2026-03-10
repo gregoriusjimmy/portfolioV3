@@ -104,6 +104,35 @@
             .section { padding: 0 20px 60px; }
         }
 
+        /* SCREENSHOT GALLERY */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        .gallery-item {
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--card-border);
+            background: var(--card);
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        .gallery-item:hover {
+            border-color: rgba(34,197,94,0.2);
+            transform: translateY(-2px);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .gallery-item .caption {
+            padding: 14px 20px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
         .reveal { opacity: 0; transform: translateY(30px); }
     </style>
 </head>
@@ -153,6 +182,16 @@
                     <div class="meta-label">Company</div>
                     <div class="meta-value">Worlder TEAM Pte. Ltd.</div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section reveal">
+        <div class="section-label">Screenshots</div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="../assets/projects/improver/video-call.png" alt="Improver video call interface with 2x2 participant grid">
+                <div class="caption">Video Call — 2x2 grid view with participant avatars and control bar</div>
             </div>
         </div>
     </div>
