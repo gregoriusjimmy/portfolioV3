@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Improver — Gregorius Jimmy Priono</title>
+    <link rel="icon" type="image/png" href="../assets/jimmy-fav.png">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0F172A;
+            --card: rgba(30,41,59,0.6);
+            --card-border: rgba(248,250,252,0.08);
+            --accent: #22C55E;
+            --accent-glow: rgba(34,197,94,0.15);
+            --text-primary: #F8FAFC;
+            --text-secondary: #94A3B8;
+            --text-muted: #64748B;
+            --radius: 16px;
+            --font-heading: 'Archivo', sans-serif;
+            --font-body: 'Space Grotesk', sans-serif;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .nav {
+            position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 100;
+            background: rgba(15,23,42,0.8); backdrop-filter: blur(20px);
+            border: 1px solid var(--card-border); border-radius: 100px;
+            padding: 12px 32px; display: flex; align-items: center; gap: 24px; min-width: 300px; justify-content: space-between;
+        }
+        .nav a { color: var(--text-secondary); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.3s; }
+        .nav a:hover { color: var(--accent); }
+        .nav .project-name { color: var(--text-primary); font-family: var(--font-heading); font-weight: 600; font-size: 14px; }
+
+        .hero {
+            position: relative; min-height: 80vh; display: flex; align-items: center; justify-content: center;
+            padding: 140px 24px 80px; overflow: hidden;
+        }
+        .hero-mesh { position: absolute; inset: 0; overflow: hidden; }
+        .hero-mesh .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.4; animation: float 8s ease-in-out infinite; }
+        .hero-mesh .orb-1 { width: 450px; height: 450px; background: radial-gradient(circle, rgba(168,85,247,0.15), transparent 70%); top: -5%; left: 20%; }
+        .hero-mesh .orb-2 { width: 400px; height: 400px; background: radial-gradient(circle, var(--accent-glow), transparent 70%); bottom: 0; right: 10%; animation-delay: -3s; }
+        .hero-mesh .orb-3 { width: 350px; height: 350px; background: radial-gradient(circle, rgba(14,165,233,0.12), transparent 70%); top: 30%; left: 60%; animation-delay: -6s; }
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -20px) scale(1.05); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+        }
+        .hero-content { position: relative; z-index: 2; text-align: center; max-width: 800px; }
+        .hero-subtitle { font-size: 14px; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; }
+        .hero-title {
+            font-family: var(--font-heading); font-size: clamp(48px, 8vw, 80px); font-weight: 900; line-height: 1.05; margin-bottom: 24px;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .role-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--card); backdrop-filter: blur(20px); border: 1px solid var(--card-border); border-radius: 100px; padding: 10px 24px; font-size: 14px; color: var(--text-secondary); margin-bottom: 24px; }
+        .role-badge .dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; }
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 8px; }
+        .tech-tag { background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2); color: var(--accent); padding: 6px 16px; border-radius: 100px; font-size: 13px; font-weight: 500; }
+
+        .section { max-width: 1000px; margin: 0 auto; padding: 0 24px 80px; }
+        .section-label { font-size: 12px; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; }
+        .glass-card { background: var(--card); backdrop-filter: blur(20px); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 32px; }
+        .overview-text { font-size: 18px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 24px; }
+        .overview-meta { display: flex; gap: 32px; flex-wrap: wrap; }
+        .meta-item .meta-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+        .meta-item .meta-value { font-size: 15px; color: var(--text-primary); font-weight: 500; }
+
+        .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+        .feature-card { background: var(--card); backdrop-filter: blur(20px); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 28px; transition: border-color 0.3s, transform 0.3s; }
+        .feature-card:hover { border-color: rgba(34,197,94,0.2); transform: translateY(-2px); }
+        .feature-card h3 { font-family: var(--font-heading); font-size: 17px; font-weight: 700; margin-bottom: 8px; color: var(--text-primary); }
+        .feature-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+        .tech-stack-row { display: flex; flex-wrap: wrap; gap: 12px; }
+        .tech-pill { background: var(--card); backdrop-filter: blur(20px); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 14px 28px; font-size: 15px; font-weight: 500; color: var(--text-primary); transition: border-color 0.3s; }
+        .tech-pill:hover { border-color: rgba(34,197,94,0.3); }
+
+        .project-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .project-nav a { text-decoration: none; }
+        .nav-card { background: var(--card); backdrop-filter: blur(20px); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 28px; transition: border-color 0.3s, transform 0.3s; }
+        .nav-card:hover { border-color: rgba(34,197,94,0.2); transform: translateY(-2px); }
+        .nav-card .nav-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .nav-card .nav-title { font-family: var(--font-heading); font-size: 18px; font-weight: 700; color: var(--text-primary); }
+        .nav-card.next { text-align: right; }
+
+        footer { text-align: center; padding: 40px 24px; color: var(--text-muted); font-size: 14px; border-top: 1px solid var(--card-border); max-width: 1000px; margin: 0 auto; }
+
+        @media (max-width: 768px) {
+            .nav { padding: 10px 20px; min-width: auto; gap: 12px; }
+            .hero { min-height: 60vh; padding: 120px 20px 60px; }
+            .features-grid { grid-template-columns: 1fr; }
+            .project-nav { grid-template-columns: 1fr; }
+            .section { padding: 0 20px 60px; }
+        }
+
+        .reveal { opacity: 0; transform: translateY(30px); }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="../index.html">← Back</a>
+        <span class="project-name">Improver</span>
+        <span></span>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-mesh">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-subtitle">Worlder TEAM Pte. Ltd. · Singapore</div>
+            <h1 class="hero-title">Improver</h1>
+            <div class="role-badge">
+                <span class="dot"></span>
+                Frontend Engineer · May 2023 – Jun 2025
+            </div>
+            <div class="tech-tags">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">WebRTC</span>
+                <span class="tech-tag">WebSocket</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="section reveal">
+        <div class="section-label">Overview</div>
+        <div class="glass-card">
+            <p class="overview-text">Built a high-performance Google Meet-like video conferencing application with unique CCTV integration capabilities for enterprise security monitoring.</p>
+            <div class="overview-meta">
+                <div class="meta-item">
+                    <div class="meta-label">Role</div>
+                    <div class="meta-value">Frontend Engineer</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Timeline</div>
+                    <div class="meta-value">May 2023 – Jun 2025</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Company</div>
+                    <div class="meta-value">Worlder TEAM Pte. Ltd.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section reveal">
+        <div class="section-label">Key Features</div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>WebRTC Video Calls</h3>
+                <p>Peer-to-peer and SFU-based video conferencing with adaptive bitrate streaming.</p>
+            </div>
+            <div class="feature-card">
+                <h3>CCTV Integration</h3>
+                <p>Live feed integration from physical security cameras into the conferencing interface.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Screen Sharing</h3>
+                <p>High-quality screen sharing with annotation capabilities.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Recording</h3>
+                <p>Server-side and client-side recording with cloud storage.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section reveal">
+        <div class="section-label">Tech Stack</div>
+        <div class="tech-stack-row">
+            <div class="tech-pill">React</div>
+            <div class="tech-pill">TypeScript</div>
+            <div class="tech-pill">WebRTC</div>
+            <div class="tech-pill">WebSocket</div>
+        </div>
+    </div>
+
+    <div class="section reveal">
+        <div class="section-label">More Projects</div>
+        <div class="project-nav">
+            <a href="email-platform.html">
+                <div class="nav-card">
+                    <div class="nav-label">← Previous</div>
+                    <div class="nav-title">Email Platform</div>
+                </div>
+            </a>
+            <a href="communicator.html">
+                <div class="nav-card next">
+                    <div class="nav-label">Next →</div>
+                    <div class="nav-title">Communicator</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <footer>© 2026 Gregorius Jimmy Priono</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        document.querySelectorAll('.reveal').forEach(el => {
+            gsap.fromTo(el, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 85%', once: true } });
+        });
+        gsap.fromTo('.hero-content', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1, ease: 'power3.out', delay: 0.2 });
+    </script>
+</body>
+</html>
